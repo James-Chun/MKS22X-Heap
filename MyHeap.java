@@ -10,7 +10,7 @@ public class MyHeap{
 
     //We discussed these 2 methods already:
     private static void pushDown(int[]data,int size,int index){
-        while ( data[index]>data[2(index)+1] || data[index]>data[2(index)+2] ){
+        while ( (2(index)+1)<data.length && data[index]>data[2(index)+1] || data[index]>data[2(index)+2] ){
             push down
             change index and repeat
         }

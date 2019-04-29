@@ -10,9 +10,18 @@ public class MyHeap{
 
     //We discussed these 2 methods already:
     private static void pushDown(int[]data,int size,int index){
-        while ( (2(index)+1)<data.length && data[index]>data[2(index)+1] || data[index]>data[2(index)+2] ){
-            push down
-            change index and repeat
+        while ( 2(index)+1 < data.length ){ //if the child (left cause if theres no left theres no right) is out then stop
+            if ( data[index] > data[2(index)+1] ){
+                int temp = data[index];
+                data[index] = data[2(index)+1];
+                data[2(index)+1] = temp;
+                index
+            }
+            if ( data[index]>data[2(index)+2] ){
+                int temp = data[index];
+                data[index] = data[2(index)+2];
+                data[2(index)+2] = temp;
+            }
         }
     }
         /*

@@ -15,13 +15,13 @@ public class MyHeap{
                 int temp = data[index];
                 data[index] = data[2(index)+1];
                 data[2(index)+1] = temp;
-                index
             }
             if ( data[index]>data[2(index)+2] ){
                 int temp = data[index];
                 data[index] = data[2(index)+2];
                 data[2(index)+2] = temp;
             }
+            index ++;
         }
     }
         /*

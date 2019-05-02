@@ -19,9 +19,9 @@ public class MyHeap{
 
   private static void pushUp(int[]data,int index){
       while (index !=0 && !(data[index] < data[(index - 1) / 2])){  //if parent is larger or index is zero (top of heap)
-              int hold = data [index];
+              int temp = data [index];
               data [index] = data [(index - 1) / 2];
-              data [(index - 1) / 2] = hold;
+              data [(index - 1) / 2] = temp;
               index = (index - 1) / 2;
 
               //System.out.println(HeapHelp.toString(data));
@@ -41,6 +41,18 @@ public class MyHeap{
         pushDown(a, a.length, index);
         // if not fix them
         index --;
+    }
+}
+
+public static void heapsort(int[] data){
+    heapify(data);
+    int size = data.length;
+    while (size > 0){
+        int temp = data[0];
+        data[0] = data[size - 1];
+        data[size - 1] = temp;
+        pushDown(data, size - 1, 0);
+        size --;
     }
 }
 

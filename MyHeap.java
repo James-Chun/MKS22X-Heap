@@ -18,7 +18,7 @@ public class MyHeap{
   }
 
   private static void pushUp(int[]data,int index){
-      while (index !=0 && !(data[index] < data[(index - 1) / 2])){
+      while (index !=0 && !(data[index] < data[(index - 1) / 2])){  //if parent is larger or index is zero (top of heap)
               int hold = data [index];
               data [index] = data [(index - 1) / 2];
               data [(index - 1) / 2] = hold;

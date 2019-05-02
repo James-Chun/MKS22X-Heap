@@ -1,13 +1,14 @@
 public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
-      while ( 2 * index+1 < data.length && 2 * index+2 < data.length ){ //if the child (left cause if theres no left theres no right) is out then stop
+      while ( size > 0 && 2*index+1 < data.length && 2*index+2 < data.length ){ //if the child (left cause if theres no left theres no right) is out then stop
+
           if ( data[index] > data[2 * index+1] ){
               int temp = data[index];
               data[index] = data[2 * index+1];   //youre going through heap wrong, dont check all only index
               data[2 * index+1] = temp;
               index = 2 * index+1;
           }
-          if ( data[index]>data[2 * index+2] ){
+          else if ( data[index]>data[2 * index+2] ){
               int temp = data[index];
               data[index] = data[2 * index+2];
               data[2 * index+2] = temp;

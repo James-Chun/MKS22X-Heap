@@ -17,14 +17,16 @@ public class MyHeap{
       }
   }
 
-    private static void pushUp(int[]data,int index){
-        while (index !=0 && data[index] < data[(index + 1) / 2]){
-                int hold = data [index];
-                data [index] = data [(index + 1) / 2];
-                data [(index + 1) / 2] = hold;
-                index = (index + 1) / 2;
-        }
-    }
+  private static void pushUp(int[]data,int index){
+      while (index !=0 && !(data[index] < data[(index - 1) / 2])){
+              int hold = data [index];
+              data [index] = data [(index - 1) / 2];
+              data [(index - 1) / 2] = hold;
+              index = (index - 1) / 2;
+
+              System.out.println(HeapHelp.toString(data));
+      }
+  }
 
     public static void main(String[] args){
       int[] test = {3,2,4};

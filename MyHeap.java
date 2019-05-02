@@ -1,4 +1,4 @@
-public class MyHeap1{
+public class MyHeap{
   private static void pushDown(int[]data,int size,int index){
       while ( 2 * index+1 < data.length && 2 * index+2 < data.length ){ //if the child (left cause if theres no left theres no right) is out then stop
           if ( data[index] > data[2 * index+1] ){
@@ -33,7 +33,7 @@ public class MyHeap1{
                 index = (index + 1) / 2;
             }
         }
-    }    
+    }
 
     public static void main(String[] args){
       int[] test = {3,2,4};

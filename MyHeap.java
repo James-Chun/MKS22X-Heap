@@ -18,21 +18,11 @@ public class MyHeap{
   }
 
     private static void pushUp(int[]data,int index){
-        int parent = data[index];
-        boolean done = false;
-        while (!done){
-            if (index == 0){
-                done = true;
-            }
-            if (data[index] < data[(index + 1) / 2]){
-                done = true;
-            }
-            else{
+        while (index !=0 && data[index] < data[(index + 1) / 2]){
                 int hold = data [index];
                 data [index] = data [(index + 1) / 2];
                 data [(index + 1) / 2] = hold;
                 index = (index + 1) / 2;
-            }
         }
     }
 

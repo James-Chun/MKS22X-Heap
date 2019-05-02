@@ -24,7 +24,7 @@ public class MyHeap{
               data [(index - 1) / 2] = hold;
               index = (index - 1) / 2;
 
-              System.out.println(HeapHelp.toString(data));
+              //System.out.println(HeapHelp.toString(data));
       }
   }
 
